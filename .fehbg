@@ -1,0 +1,3 @@
+#!/bin/sh
+#feh --no-fehbg --bg-scale '/home/sg/.wallpers/actives/abstract.png' '/home/sg/.wallpers/actives/cthulhu.jpg' 
+feh --no-fehbg --bg-fill --randomize ~/.wallpers/actives/*
