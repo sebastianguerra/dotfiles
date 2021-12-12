@@ -109,11 +109,11 @@ alias ls='ls --color=auto'
 alias ll='ls -la'
 alias doom='emacsclient -c -a "emacs" -n'
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
-else
-  neofetch
-fi
+#if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+#  exec startx
+#else
+#  neofetch
+#fi
 source /usr/share/nvm/init-nvm.sh
 export PATH=$PATH:/home/sg/bin
 export PATH=$PATH:$HOME/.local/bin
