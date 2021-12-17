@@ -56,7 +56,9 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+-- myFocusedBorderColor = "#ff0000"
+myFocusedBorderColor = "#0099ff"
+
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -67,13 +69,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run")
+    , ((modm .|. shiftMask, xK_d     ), spawn "dmenu_run")
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
+
+    --
+    , ((modm,               xK_c     ), spawn "emacsclient -c -a 'emacs' -n")
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
@@ -151,7 +156,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+        | (key, sc) <- zip [xK_e, xK_w, xK_r] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
@@ -248,8 +253,11 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
+        spawn "~/.screenlayout/prueba.sh"
+        spawnOnce "/usr/bin/emacs --daemon"
         spawnOnce "nitrogen --restore &"
         spawnOnce "picom &"
+        spawnOnce "ulauncher"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -257,7 +265,7 @@ myStartupHook = do
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 main = do
-  xmproc <- spawnPipe "xmobar -x 1 /home/sg/.xmobarrc"
+  xmproc <- spawnPipe "xmobar -x 0 /home/sg/.xmobarrc"
   xmonad $ docks defaults
 
 -- A structure containing your configuration settings, overriding
