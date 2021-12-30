@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='/usr/bin/nvim'
 else
-  export EDITOR='emacsclient -c -a "emacs" -n'
+  export EDITOR='/usr/bin/nvim'
 fi
 
 # Compilation flags
@@ -128,4 +128,11 @@ source /usr/bin/virtualenvwrapper.sh
 
 # Resaltado de sintaxis
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Sugerencias 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Ruby path
+export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
+
+# Personal scripts path
+export PATH=$PATH:$HOME/scripts
