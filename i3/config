@@ -185,7 +185,7 @@ bindsym $mod+Shift+y exec /home/sg/.config/i3/autostart.sh 07:00
 
 bindsym $mod+c exec emacsclient -c -n -a "emacs"
 
-
+bindsym $mod+t exec xsel | festival --tts
 
 
 ###############
