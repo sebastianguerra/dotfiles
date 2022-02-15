@@ -29,6 +29,7 @@ call plug#begin('~/.vim/plugged')
 "{{ Productivity }}
     Plug 'vimwiki/vimwiki'                             " VimWiki 
     Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
+    Plug 'mattn/emmet-vim'                             " Emmet Support
 "{{ Tim Pope Plugins }}
     Plug 'tpope/vim-surround'                          " Change surrounding marks
 "{{ Syntax Highlighting and Colors }}
@@ -36,6 +37,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
     Plug 'vim-python/python-syntax'                    " Python highlighting
     Plug 'ap/vim-css-color'                            " Color previews for CSS
+    Plug 'pangloss/vim-javascript'                     " Javascript highlighting
+    Plug 'mxw/vim-jsx'                                 " jsx highlighting
 "{{ Junegunn Choi Plugins }}
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
@@ -76,6 +79,7 @@ let g:rehash256 = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap ESC to ii
 :imap ii <Esc>
+let g:user_emmet_leader_key='<C-f>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line

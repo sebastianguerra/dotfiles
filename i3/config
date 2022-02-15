@@ -262,5 +262,6 @@ bar {
 	position top
 	mode dock
 	modifier None
-	tray_output HDMI-1
+	# tray_output HDMI-1
+    tray_output primary
 }

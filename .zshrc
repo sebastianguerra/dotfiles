@@ -136,3 +136,9 @@ export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
 
 # Personal scripts path
 export PATH=$PATH:$HOME/scripts
+
+alias rr='curl -s -L http://bit.ly/10hA8iC | bash'
+
+source /home/sg/.config/broot/launcher/bash/br
+
+fortune -n 100 -s | figlet | lolcat
