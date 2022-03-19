@@ -2,7 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/sg/.oh-my-zsh"
+## export ZSH="/home/sg/.oh-my-zsh"
+export ZSH="/usr/share/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -124,7 +125,8 @@ export GOPATH=$(go env GOPATH)
 
 # virtualenvwrapper config
 export WORKON_HOME=$HOME/.virtualenvs/
-source /usr/bin/virtualenvwrapper.sh
+## source /usr/bin/virtualenvwrapper.sh
+source /home/sg/.local/bin/virtualenvwrapper.sh
 
 # Resaltado de sintaxis
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -141,4 +143,19 @@ alias rr='curl -s -L http://bit.ly/10hA8iC | bash'
 
 source /home/sg/.config/broot/launcher/bash/br
 
+## AUTOCOMPLETE FOR PASS
+autoload -Uz compinit
+compinit -u
+
+# It seems that countless recommendations on the web to run:
+# autoload -Uz compinit && compinit     
+# Have resulted in everyone's zsh autocomplete initialization running that. I have no idea
+# what it does, however experimentation has shown that running "compinit" clobbers any
+# completions you already had configured. Which totally sucks if you configure auto completion
+# for multiple tools in your zshrc
+alias compinit="echo no more compinit!"
+
+
 fortune -n 100 -s | figlet | lolcat
+
+setxkbmap -option caps:escape
