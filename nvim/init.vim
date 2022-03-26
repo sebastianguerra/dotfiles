@@ -45,6 +45,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
 "{{ coloscheme }}
     Plug 'morhetz/gruvbox'                             " colorscheme
+"{{ LaTeX }}
+    Plug 'lervag/vimtex'                               " LaTeX
 
 call plug#end()
 
@@ -81,6 +83,7 @@ let g:rehash256 = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap ESC to ii
 :imap ii <Esc>
+:imap iw <Esc><Esc>:w<CR>
 let g:user_emmet_leader_key='<C-f>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -235,4 +238,12 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 colorscheme gruvbox
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => LaTeX support
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_method = 'latexrun'
+let maplocalleader = ","
 
