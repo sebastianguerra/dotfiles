@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree'                         " Nerdtree
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
     Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
+    Plug 'SergioRibera/vim-files'                      " Create Files and Directories
 "{{ Productivity }}
     Plug 'vimwiki/vimwiki'                             " VimWiki 
     Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
@@ -96,6 +97,8 @@ nnoremap <A-6> :b 6<CR>
 nnoremap <A-7> :b 7<CR>
 nnoremap <A-8> :b 8<CR>
 nnoremap <A-9> :b 9<CR>
+
+noremap <leader>cf :call VimFiles#FileCreate()<Cr>:q<Cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
