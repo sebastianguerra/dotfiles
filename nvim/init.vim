@@ -18,7 +18,6 @@ call plug#begin('~/.vim/plugged')
 
 "{{ The Basics }}
     Plug 'gmarik/Vundle.vim'                           " Vundle
-    Plug 'itchyny/lightline.vim'                       " Lightline statusbar
     Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
     Plug 'frazrepo/vim-rainbow'
 "{{ Status Bar }}
@@ -112,11 +111,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del 
 set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
 let g:airline#extrensions#hunls#enabled=0
 let g:airline#extensions#branch#enabled=1
-
-" The lightline.vim theme
-let g:lightline = {
-      \ 'colorscheme': 'darcula',
-      \ }
 
 " Always show statusline
 set laststatus=2
