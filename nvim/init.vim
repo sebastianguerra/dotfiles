@@ -21,6 +21,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'                       " Lightline statusbar
     Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
     Plug 'frazrepo/vim-rainbow'
+"{{ Status Bar }}
+    Plug 'vim-airline/vim-airline'           
+    Plug 'vim-airline/vim-airline-themes'           
 "{{ File management }}
     Plug 'vifm/vifm.vim'                               " Vifm
     Plug 'scrooloose/nerdtree'                         " Nerdtree
@@ -85,10 +88,31 @@ let g:rehash256 = 1
 :imap ii <Esc>
 :imap iw <Esc><Esc>:w<CR>
 let g:user_emmet_leader_key='<C-f>'
+nnoremap <A-1> :b 1<CR>
+nnoremap <A-2> :b 2<CR>
+nnoremap <A-3> :b 3<CR>
+nnoremap <A-4> :b 4<CR>
+nnoremap <A-5> :b 5<CR>
+nnoremap <A-6> :b 6<CR>
+nnoremap <A-7> :b 7<CR>
+nnoremap <A-8> :b 8<CR>
+nnoremap <A-9> :b 9<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airline config
+let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'hybrid'
+let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
+set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
+let g:airline#extrensions#hunls#enabled=0
+let g:airline#extensions#branch#enabled=1
+
 " The lightline.vim theme
 let g:lightline = {
       \ 'colorscheme': 'darcula',
@@ -169,32 +193,15 @@ highlight Function         ctermfg=1    ctermbg=none    cterm=none
 " highlight xmlEndTag        ctermfg=114     ctermbg=none    cterm=none
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vifm
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>vv :Vifm<CR>
-map <Leader>vs :VsplitVifm<CR>
-map <Leader>sp :SplitVifm<CR>
-map <Leader>dv :DiffVifm<CR>
-map <Leader>tv :TabVifm<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimWiki
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim-Instant-Markdown
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:instant_markdown_autostart = 0         " Turns off auto preview
-let g:instant_markdown_browser = "surf"      " Uses surf for preview
-map <Leader>md :InstantMarkdownPreview<CR>   " Previews .md file
-map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Open terminal inside Vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>tt :vnew term://fish<CR>
+map <Leader>tt :vnew term://zsh<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mouse Scrolling
