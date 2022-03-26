@@ -159,3 +159,5 @@ alias compinit="echo no more compinit!"
 fortune -n 100 -s | figlet | lolcat
 
 setxkbmap -option caps:escape
+
+alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
