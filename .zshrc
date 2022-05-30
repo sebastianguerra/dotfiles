@@ -156,8 +156,28 @@ compinit -u
 alias compinit="echo no more compinit!"
 
 
-fortune -n 100 -s | figlet | lolcat
 
-setxkbmap -option caps:escape
 
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+
+eval $(thefuck --alias)
+
+if [[ `uname` == Darwin ]]; then
+    MAX_MEMORY_UNITS=KB
+else
+    MAX_MEMORY_UNITS=MB
+fi
+
+TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
+'avg shared (code):         %X KB'$'\n'\
+'avg unshared (data/stack): %D KB'$'\n'\
+'total (sum):               %K KB'$'\n'\
+'max memory:                %M '$MAX_MEMORY_UNITS''$'\n'\
+'page faults from disk:     %F'$'\n'\
+'other page faults:         %R'
+
+
+setxkbmap -option caps:escape
+alias o=xdg-open
+function untildone() {until $@; do echo "Intentando '$@' de nuevo"; done}
+fortune -n 100 -s | figlet | lolcat

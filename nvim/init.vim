@@ -33,6 +33,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vimwiki/vimwiki'                             " VimWiki 
     Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
     Plug 'mattn/emmet-vim'                             " Emmet Support
+    Plug 'jiangmiao/auto-pairs'                        " () [] {}
 "{{ Tim Pope Plugins }}
     Plug 'tpope/vim-surround'                          " Change surrounding marks
 "{{ Syntax Highlighting and Colors }}
